@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>全页面截图设置</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+    .option-group {
+      margin-bottom: 20px;
+    }
+    label {
+      display: block;
+      margin-bottom: 5px;
+      font-weight: bold;
+    }
+    input[type="text"] {
+      width: 100%;
+      padding: 8px;
+      margin-bottom: 10px;
+      box-sizing: border-box;
+    }
+    button {
+      background-color: #4285f4;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      text-align: center;
+      font-size: 16px;
+      cursor: pointer;
+      border-radius: 4px;
+    }
+    button:hover {
+      background-color: #3b78e7;
+    }
+    .status {
+      margin-top: 15px;
+      padding: 10px;
+      border-radius: 4px;
+    }
+    .success {
+      background-color: #d4edda;
+      color: #155724;
+    }
+    .error {
+      background-color: #f8d7da;
+      color: #721c24;
+    }
+    .note {
+      margin-top: 20px;
+      padding: 10px;
+      background-color: #fff3cd;
+      color: #856404;
+      border-radius: 4px;
+    }
+  </style>
+</head>
+<body>
+  <h1>全页面截图设置</h1>
+  
+  <div class="option-group">
+    <label for="downloadDirectory">截图保存目录:</label>
+    <input type="text" id="downloadDirectory" placeholder="例如: D:\test">
+    <small>默认为D:\test，请确保目录存在且有写入权限</small>
+  </div>
+  
+  <button id="saveSettings">保存设置</button>
+  
+  <div id="status" class="status" style="display: none;"></div>
+  
+  <div class="note">
+    <p><strong>使用说明:</strong> 此扩展会自动截取整个网页并生成长截图。</p>
+    <p>截图过程中，扩展将自动滚动页面并捕获多张图片，然后将它们合并为一个长图片。</p>
+    <p>截图完成后，将自动保存到您设置的目录中，文件名包含网页标题和时间戳。</p>
+    <p>截图过程中请勿手动滚动或切换页面，以确保截图质量。</p>
+  </div>
+  
+  <script src="options.js"></script>
+</body>
+</html> 

@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>全页面截图</title>
+  <style>
+    body {
+      width: 300px;
+      padding: 10px;
+      font-family: Arial, sans-serif;
+    }
+    .container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .title {
+      font-size: 18px;
+      font-weight: bold;
+      margin-bottom: 15px;
+    }
+    .button {
+      background-color: #4285f4;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      text-align: center;
+      text-decoration: none;
+      font-size: 16px;
+      margin: 10px 0;
+      cursor: pointer;
+      border-radius: 4px;
+      width: 90%;
+    }
+    .button:hover {
+      background-color: #3b78e7;
+    }
+    .button:disabled {
+      background-color: #cccccc;
+      cursor: not-allowed;
+    }
+    .shortcut {
+      margin-top: 15px;
+      font-size: 14px;
+      color: #666;
+    }
+    .save-path {
+      margin-top: 10px;
+      font-size: 14px;
+      color: #666;
+    }
+    .settings-link {
+      margin-top: 15px;
+      font-size: 14px;
+      color: #4285f4;
+      text-decoration: none;
+      cursor: pointer;
+    }
+    .settings-link:hover {
+      text-decoration: underline;
+    }
+    .note {
+      margin-top: 10px;
+      font-size: 12px;
+      color: #888;
+      font-style: italic;
+      text-align: center;
+      padding: 0 10px;
+    }
+    .troubleshoot {
+      margin-top: 15px;
+      border-top: 1px solid #eee;
+      padding-top: 10px;
+      text-align: center;
+    }
+    .troubleshoot-link {
+      font-size: 12px;
+      color: #4285f4;
+      cursor: pointer;
+    }
+    #troubleshootInfo {
+      display: none;
+      margin-top: 10px;
+      font-size: 12px;
+      color: #666;
+      text-align: left;
+      background-color: #f5f5f5;
+      padding: 8px;
+      border-radius: 4px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="title">全页面截图</div>
+    <button id="captureButton" class="button">捕获整页长截图</button>
+    <div class="shortcut">快捷键: Ctrl+P</div>
+    <div id="savePath" class="save-path">保存到: 加载中...</div>
+    <div class="note">截图过程中请勿滚动或切换页面，截图将自动合并并保存</div>
+    <a id="settingsLink" class="settings-link">设置</a>
+    
+    <div class="troubleshoot">
+      <a class="troubleshoot-link" id="toggleTroubleshoot">截图失败？点击查看解决方法</a>
+      <div id="troubleshootInfo">
+        <p><strong>常见问题及解决方法：</strong></p>
+        <ol>
+          <li>确保目标目录存在且有写入权限</li>
+          <li>对于非常长或复杂的页面，请尝试在静态内容页面上使用</li>
+          <li>某些网站可能限制截图，请尝试在其他网站上测试</li>
+          <li>如果持续失败，请尝试重启浏览器</li>
+          <li>确保Chrome版本是最新的</li>
+        </ol>
+      </div>
+    </div>
+  </div>
+  <script src="popup.js"></script>
+</body>
+</html> 
