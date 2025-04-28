@@ -59,7 +59,7 @@ def new_run_rsync(src_dir, target_root):
             'rsync',
             '-rvhn',
             '--size-only',
-            src_dir,
+            src_dir.rstrip('/') + '/',
             target_dir
         ]
         # 使用 Popen 替代 run，以便获取进程对象
